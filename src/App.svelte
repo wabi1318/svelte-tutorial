@@ -4,44 +4,73 @@
   import Counter from './lib/Counter.svelte'
 </script>
 
-<main>
+<header class="header">
+  <a class="header-title" href="/">Svelte EC</a>
+  <nav>
+    <ul class="header-links">
+      <li>ようこそゲストさん</li>
+      <li>
+        <a href="/cart">カート (0)</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<article class="product">
+  <div class="product-main">
+    <div class="image-container">
+      <img src="https://github.com/svelte-book/sample-app/raw/main/static/react-book-1.png" alt="『Svelte Guide』表紙" />
+    </div>
+  </div>
+
   <div>
-    <a href="https://vite.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
+    <h2>Svelte Guide</h2>
+    <dl>
+      <dt>価格</dt>
+      <dd>3500円</dd>
+    </dl>
+    <div>
+      <button>カートに入れる</button>
+    </div>
   </div>
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
+  <footer>
+    <h3>関連商品</h3>
+    <ul>
+      <li>
+        <a href="/products/react-book">React book</a>
+        - 3500円
+      </li>
+      <li>
+        <a href="/products/vue-book">Vue book</a>
+        - 3500円
+      </li>
+      <li>
+        <a href="/products/angular-book">Angular book</a>
+        - 3500円
+      </li>
+    </ul>
+  </footer>
+</article>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  :global(body) {
+    margin: 0;
+    background-color: #eee;
+    padding: 0;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
+
+
 </style>
